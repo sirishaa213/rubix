@@ -63,6 +63,7 @@ const (
 	CommitDataTokenCmd    string = "commitdatatoken"
 	SetupDBCmd            string = "setupdb"
 	GetTxnDetailsCmd      string = "gettxndetails"
+	GetPeerBalanceCmd     string = "getpeerbalance"
 )
 
 var commands = []string{VersionCmd,
@@ -470,6 +471,8 @@ func Run(args []string) {
 		cmd.setupDB()
 	case GetTxnDetailsCmd:
 		cmd.getTxnDetails()
+	case GetPeerBalanceCmd:
+		cmd.getPeerBalance()
 	default:
 		cmd.log.Error("Invalid command")
 	}

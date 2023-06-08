@@ -48,6 +48,7 @@ const (
 	APIGetTxnByTxnID       string = "/api/get-by-txnId"
 	APIGetTxnByDID         string = "/api/get-by-did"
 	APIGetTxnByComment     string = "/api/get-by-comment"
+	APIGetPeerBalance      string = "/api/get-peer-balance"
 )
 
 // Server defines server handle
@@ -227,6 +228,7 @@ func (s *Server) RegisterRoutes() {
 	s.AddRoute(APIGetTxnByTxnID, "GET", s.AuthHandle(s.APIGetTxnByTxnID, s.ErrorFunc))
 	s.AddRoute(APIGetTxnByDID, "GET", s.AuthHandle(s.APIGetTxnByDID, s.ErrorFunc))
 	s.AddRoute(APIGetTxnByComment, "GET", s.AuthHandle(s.APIGetTxnByComment, s.ErrorFunc))
+	s.AddRoute(APIGetPeerBalance, "GET", s.AuthHandle(s.APIGetPeerBalance, s.ErrorFunc))
 
 }
 
